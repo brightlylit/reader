@@ -17,25 +17,22 @@ class App extends Component {
     this.midPoint = 380
     this.midPointDown = 379
     this.myp = new DataLoader();
-    this.content = {}
-    
-   
-    
+    this.content = {}  
+    this.ignoreCounter = 0;
   }
   state = {
     text:[],
     refArray:[],
     ignore:[],
     key:[],
-    textOptKeys:[]
+    textOptKeys:[],
+    autostop:"false"
   }
   componentDidMount(){
     this.myp.getData().then((content) => {
       let TOK = Object.keys(content)
       this.setState({textOptKeys:TOK})
-      this.content = content
-
-      
+      this.content = content 
     })
     
   }
@@ -101,13 +98,20 @@ class App extends Component {
     }
   }
   onWordClickHandler = (e) =>{
+    
     for(var x = 0; x < this.state.key.length; x++){
+      
       if(this.state.refArray[e.target.id].current.innerHTML === this.state.refArray[this.state.key[x]].current.innerHTML){
         this.state.refArray[e.target.id].current.classList.add('ignore') 
+        this.ignoreCounter++;
+        if(this.ignoreCounter === 5){
+          this.setState({autostop:"true"})
+        }
       }
     }
    
   }
+  
   onChangeHandler = (e) => {
     let keyArray = Object.keys(this.content)
     for (var x = 0; x < keyArray.length; x++){
@@ -183,7 +187,10 @@ class App extends Component {
           textarray={ this.textArray}
           answers={ this.state.key }
           />
-          <Stopwatch/>
+          <Stopwatch
+         // onClick={ this.stopBtnOnClickHandler }
+          autostop={ this.state.autostop }
+          />
           </Col>
         </Row>
       </Grid>

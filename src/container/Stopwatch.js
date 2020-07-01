@@ -7,6 +7,7 @@ class Stopwatch extends Component{
         this.minutes = 0;
         this.hours = 0;
         this.textContent = ""
+        this.t = {}
    }
    state = {
        textContent:""
@@ -16,7 +17,6 @@ class Stopwatch extends Component{
     
     componentDidMount(){
         const add = () => {
-
             this.seconds++;
             if (this.seconds >= 60) {
                 this.seconds = 0;
@@ -26,23 +26,37 @@ class Stopwatch extends Component{
                     this.hours++;
                 }
             }
-
             this.textContent = (this.hours ? (this.hours > 9 ? this.hours : "0" + this.hours) : "00") + ":" + (this.minutes ? (this.minutes > 9 ? this.minutes : "0" + this.minutes) : "00") + ":" + (this.seconds > 9 ? this.seconds : "0" + this.seconds);
             this.setState({textContent:this.textContent})
             timer();
+            if( this.props.autostop === "true" ){
+                console.log("stopping timer")
+                clearTimeout(this.t)
+            }
 
         }
         const timer = () => {
-            let t = setTimeout(add, 1000);
+            this.t = setTimeout(add, 1000);
         }
         add()
     }
-
+    stopStopwatch = () => {
+        console.log("stopped")
+        clearTimeout(this.t)
+    }
     render(){
         return(
-           <span>
-               { this.state.textContent }
-           </span>
+            <div>
+                <span>
+                    { this.state.textContent }
+                </span>
+                <button
+                onClick={ this.stopStopwatch }
+                autostop={ this.props.autostop }
+                >Stop
+                </button>
+            </div>
+                
                 
             
         )
