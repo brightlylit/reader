@@ -1,0 +1,15 @@
+{
+
+		"T2": {
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra volutpat lobortis. In hac habitasse platea dictumst. Proin in nunc quis orci fermentum euismod quis sed ante. Integer vel ex ac neque iaculis sagittis quis vel elit. Aliquam blandit, tellus at dignissim laoreet, ante est mollis neque, non lobortis nisi turpis in augue. Aliquam cursus augue eget varius finibus. Aliquam tristique vel ante sit amet sollicitudin. Integer sit amet risus vitae magna imperdiet molestie.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			]
+		}
+
+}

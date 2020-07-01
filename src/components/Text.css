@@ -1,0 +1,30 @@
+.blanked{
+    color:#fff;
+    
+}
+.ignore{
+    background-color:green!important;
+    padding-left:2px;
+    padding-right:2px;
+    color:white!important;
+  }
+.ignoreChunk{
+    background-color:gray!important;
+}
+.hideText{
+    visibility:hidden;
+}
+.greyed{
+    background-color:white;
+    color:lightgray!important
+
+}
+.unblanked{
+    color:#000;
+}
+.spanStyle{
+    border: 2px solid black!important;
+    padding:10px;
+    font: size 0.8em;
+    color:gray;
+}
