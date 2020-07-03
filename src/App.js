@@ -26,12 +26,13 @@ class App extends Component {
     ignore:[],
     key:[],
     textOptKeys:[],
-    autostop:"false"
+    autostop:"false",
+    headings:[]
   }
   componentDidMount(){
     this.myp.getData().then((content) => {
       let TOK = Object.keys(content)
-      this.setState({textOptKeys:TOK})
+      this.setState({textOptKeys:TOK, headings:content.headings})
       this.content = content 
     })
     
@@ -49,11 +50,16 @@ class App extends Component {
     switch(a){
       case "random": const l = this.state.refArray.length
         let randomSpan = Math.floor(Math.random() * l)
-        if(!this.state.refArray[randomSpan].current.classList.contains('ignore')){
-          this.state.refArray[randomSpan].current.classList.add('hideText')
+        console.log("random span: ", randomSpan)
+        try{
+          if(!this.state.refArray[randomSpan].current.classList.contains('ignore')){
+            this.state.refArray[randomSpan].current.classList.add('hideText')
+          }
         }
-        
-        //this.ignoreSpans()
+          catch(err){
+            clearInterval(this.set)
+            console.log(err.message)
+          }       
         break;
       case "animate": const m = this.state.refArray.length
         let mrandomSpan = Math.floor(Math.random() * m)
@@ -111,22 +117,19 @@ class App extends Component {
     }
    
   }
-  
   onChangeHandler = (e) => {
     let keyArray = Object.keys(this.content)
     for (var x = 0; x < keyArray.length; x++){
       let y = keyArray[x]
       if(e.target.value === y){
         this.textArray = this.content[y].text.split(" ")
+        console.log("headings: "+this.content[y].headings)
         let refarray = this.textArray.map(()=> React.createRef())
-        this.setState({text:this.textArray, refArray:refarray, ignore:this.content[y].ignore, key:this.content[y].key})
+        this.setState({text:this.textArray, refArray:refarray, ignore:this.content[y].ignore, key:this.content[y].key, headings:this.content[y].headings})
     
       }
   }
-}
-  
-   
-  
+}  
   render(){
     return (
       <Grid>
@@ -179,6 +182,7 @@ class App extends Component {
             className={ "unblanked" }
             onClick={ this.onWordClickHandler }
             refArray={ this.state.refArray }
+            headings={ this.state.headings }
             />
           </div>
           </Col>

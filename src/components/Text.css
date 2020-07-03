@@ -2,14 +2,25 @@
     color:#fff;
     
 }
-.ignore{
+span.ignore{
     background-color:green!important;
     padding-left:2px;
     padding-right:2px;
     color:white!important;
   }
+p.ignore{
+    border:2px solid black;
+    text-align:center;
+    height:50px;
+    width:100%;
+    padding:10px;
+}
+.boldit{
+    font-weight: bold;
+}
 .ignoreChunk{
     background-color:gray!important;
+    padding:5px;
 }
 .hideText{
     visibility:hidden;
