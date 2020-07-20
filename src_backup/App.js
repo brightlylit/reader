@@ -30,14 +30,18 @@ class App extends Component {
     textOptKeys:[],
     autostop:"false",
     headings:[],
-    exercises:[]
+    exercises:{}
   }
   componentDidMount(){
     this.myp.getData().then((content) => {
       let TOK = Object.keys(content)
       this.setState({textOptKeys:TOK, headings:content.headings})
       this.content = content 
-    })  
+     // console.log("content: ",content)
+      
+
+    })
+    
   }
   onClickHandler = (e) => { 
     let a = e.target.name
@@ -46,6 +50,8 @@ class App extends Component {
   onClickPauseHandler = () => {
     clearInterval(this.set)
     }
+   
+  
   timer = (a) => {
     switch(a){
       case "random": const l = this.state.refArray.length
@@ -57,6 +63,7 @@ class App extends Component {
         }
           catch(err){
             clearInterval(this.set)
+           /// console.log(err.message)
           }       
         break;
       case "animate": const m = this.state.refArray.length
@@ -96,9 +103,16 @@ class App extends Component {
     }
   
   }
-  
-  onWordClickHandler = (e) =>{  
-    for(var x = 0; x < this.state.key.length; x++){    
+  ignoreSpans = () => {
+    for (let x=0; x < this.state.ignore.length; x++){
+      
+
+    }
+  }
+  onWordClickHandler = (e) =>{
+    
+    for(var x = 0; x < this.state.key.length; x++){
+      
       if(this.state.refArray[e.target.id].current.innerHTML === this.state.refArray[this.state.key[x]].current.innerHTML){
         this.state.refArray[e.target.id].current.classList.add('ignore') 
         this.ignoreCounter++;
@@ -107,29 +121,35 @@ class App extends Component {
         }
       }
     }
+   
   }
   onChangeHandler = (e) => {
     let keyArray = Object.keys(this.content)
+   // console.log("keyArray: ",keyArray)
+    
+   // console.log("e target val: ",e.target.value)
     for (var x = 0; x < keyArray.length; x++){
       let y = keyArray[x]//T1 etc
       if(e.target.value === y){
         this.textArray = this.content[y].text.split(" ")
         let exerciseHeadings = this.content[y].exercises
-        //let exerciseHeadingKeys = Object.keys(exerciseHeadings)
+        //console.log("exerciseHeadings: ",exerciseHeadings)
+        let exerciseHeadingKeys = Object.keys(exerciseHeadings)
+       // console.log("exerciseHeadingKeys: ",exerciseHeadingKeys)
+       // console.log("vals: ",exerciseHeadings[exerciseHeadingKeys[x]])
+        //console.log("Object keys: ",Object.keys(this.content[keyArray[x]].exercises.ex1))
         let refarray = this.textArray.map(()=> React.createRef())
         this.setState({text:this.textArray, refArray:refarray, 
                       ignore:this.content[y].ignore, key:this.content[y].key, 
                       headings:this.content[y].headings,
-                      exercises: exerciseHeadings}, this.showstate)                     
-      }      
-    } 
-    
-}
-  showstate = () => {
-        return(console.log("this.state.text: ",this.state.text),
-        console.log("this.state.exercises[1]: ",this.state.exercises[1].type)
-        )
-  }  
+                      exercises: exerciseHeadings})
+                      
+      }
+      
+  }
+  
+  
+}  
   render(){
     
     return (
@@ -188,7 +208,6 @@ class App extends Component {
           <NewCol size={0.5}>
             <Row>
               <InnerCol size={0.95}>
-                <span>Exercise Loader</span>
                 <ExerciseLoader
                 optobject={this.state.exercises}
                 />

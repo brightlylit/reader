@@ -4,14 +4,17 @@
 			"text": "<h3>Heading <bo>Chronobiology might sound a little futuristic – like <br>something from a science fiction novel, <br>perhaps – but it’s actually a field of study that concerns one of the oldest processes life on this planet has ever known: short-term rhythms of time and their effect on flora and fauna. <bo>This can take many forms. Marine <bo>life, for example, is influenced by tidal patterns. Animals tend to be active or inactive depending on the position of the sun or moon. Numerous creatures, <br>humans <se>included, are largely diurnal– that is, <se>they like to come out during the hours of sunlight.Nocturnal animals, such as bats and possums, prefer to forage by night.A third group are known as crepuscular: they thrive in the low - light of dawn and dusk and remain inactive at other hours.When it comes to humans, chronobiologists are interested in what is known as the circadian rhythm.This is the complete cycle our bodies are naturally geared to undergo within the passage of a twenty - four hour day.Aside from sleeping at night and waking during the day, each cycle involves many other factors such as changes in blood pressure and body temperature.Not everyone has an identical circadian rhythm.",
 			"key": [1, 13, 21, 35, 49],
 			"ignore": [
-				[0, 2, 3, 4, 5],
+				[2, 3, 4, 5, 6],
 				[10, 11, 12, 14, 15],
 				[20, 22, 23, 24, 25],
 				[30, 31, 32, 33, 34],
 				[50, 51, 52, 53, 54, 55]
 			],
-			"headings":["this is heading 1", "this is heading 2"]
-		},
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[
+				{"type":"pgDDLpara","sentences":[["Are you * teacher?"], ["Is * Atacama desert in Chile?"], ["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"], ["Is * dog intelligent?"]],"answers":[["a","the","-"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]},
+				{"type":"multichoice","sentences":[["multichoice Are you * teacher"],["Is * Atacama desert in Chile?"],["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"],["Is * dog intelligent?"]],"answers": [["1","2","3"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]}]
+			},
 		"T2":{
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra volutpat lobortis. In hac habitasse platea dictumst. Proin in nunc quis orci fermentum euismod quis sed ante. Integer vel ex ac neque iaculis sagittis quis vel elit. Aliquam blandit, tellus at dignissim laoreet, ante est mollis neque, non lobortis nisi turpis in augue. Aliquam cursus augue eget varius finibus. Aliquam tristique vel ante sit amet sollicitudin. Integer sit amet risus vitae magna imperdiet molestie.",
 			"key": [1, 13, 21, 35, 49],
