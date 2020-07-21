@@ -8,9 +8,14 @@ import Layout from '../../../UI/Layout';
 class MultichoiceController extends Component{
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this)
-        //this.myp = new DataLoader()
-        
+        this.handleChange = this.handleChange.bind(this)  
+        try{
+            this.arrayOfRefs = this.props.myitems[1].answers.map(() => React.createRef())
+            this.answers = this.props.myitems[1].answers
+        }
+        catch(err){
+            window.location.href = "/"
+        }       
         
     }
     state = {
@@ -20,22 +25,19 @@ class MultichoiceController extends Component{
     }
     
     componentDidMount(){ 
-        console.log("mounted")
-        let content = this.props.myitems
-        console.log("[multichoicecontroller]this.props.myitems    : ", this.props.myitems)
-        this.setState({ exerciseContent:content })
-            const arrayOfRefs = this.state.exerciseContent.answers.map(() => React.createRef())                     
-            this.setState({ myrefs:arrayOfRefs })
-            this.setState( { answerKey: content.answerKey } )
-        console.log("this.state.exerciseContent: ",this.state.exerciseContent)
+       // let content = this.props.myitems
+        //this.setState({ exerciseContent:content })
+            //const arrayOfRefs = this.state.exerciseContent.answers.map(() => React.createRef())                     
+            //this.setState({ myrefs:arrayOfRefs })
+            //this.setState( { answerKey: content.answerKey } )
 
     }
     
     handleChange(event) {
-        if(event.target.value === this.state.answerKey[parseInt(event.target.name)][0]){
-          this.state.myrefs[event.target.name].current.innerHTML = "correct!!"
+        if(event.target.value === this.answers[parseInt(event.target.name)][0]){
+          this.arrayOfRefs[event.target.name].current.innerHTML = "correct!!"
         }else{
-            this.state.myrefs[event.target.name].current.innerHTML = "WRONG"  
+            this.arrayOfRefs[event.target.name].current.innerHTML = "WRONG"  
         }
     }
    
@@ -46,8 +48,8 @@ class MultichoiceController extends Component{
                      <Multichoice
                         myitems={this.props.myitems}
                         onChange={this.handleChange}
-                        value={this.state.exerciseContent.answers}
-                        refarray={this.state.myrefs}
+                        value={this.answers}
+                        refarray={this.arrayOfRefs}
                     />
 
                 </Layout>

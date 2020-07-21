@@ -1,33 +1,23 @@
 import React, { useState, useEffect } from 'react';
-//import MultichoiceController from '../../container/Multichoice/Controller/MultichoiceController';
+import MultichoiceController from '../../container/Multichoice/Controller/MultichoiceController';
 import PGddlController from '../../container/Multichoice/Controller/PGddlController'
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 const ExerciseLoader = (props) => {
     let optarray = []
-    let loadTemplate = ""
-    let objVals = {}
+   // let loadTemplate = ""
+   // let objVals = {}
     for(let element in props.optobject){
         optarray.push(element)
-        console.log("element ",element)
+        //console.log("element ",element)
     }
-    //console.log("props.optobject: ",props.optobject)
-   
+   //console.log("props.optobject: ",props.optobject)
+   //console.log("props.optobject.length: ",props.optobject.length)
     
     const [contentState, setContentState] = useState({
-        state:{exercises: props.optobject} 
-       
-              
+        state:{exercises: props.optobject}         
     })
    
-   //setContentState({
-       // state:{exercises:props.optobject}
-   // })
-   // objVals = Object.values(props.optobject)
-       // setContentState({content:{exercises:objVals}}) 
-    //console.log("objVals: ",objVals)
-        
-   
-
+  
     return( 
         <BrowserRouter>  
             <nav>
@@ -35,20 +25,17 @@ const ExerciseLoader = (props) => {
                 {optarray.map((el,i)=>{
                     return(
                         <li key={i} name={i}>
-                            <NavLink to="/ex1" exact >{el}</NavLink>  
+                            <NavLink to={'ex'+el} exact >{i+1}</NavLink>
+                            
                         </li>
                         )
                     })}
                 </ul>  
             </nav>
             <Switch>
-                {/*<Route 
-                    path="/ex1" 
-                    render={(props) => (
-                        <PGddlController {...props} myitems={props.optobject}/>
-                    )}
-                    />*/}
-                    <Route path="/ex1" children={ <PGddlController myitems={props.optobject} />} />
+                <Route path="/ex0" children={ <MultichoiceController myitems={props.optobject} />} />
+                <Route path="/ex1" children={ <PGddlController myitems={props.optobject} />} />
+                
             </Switch>  
         </BrowserRouter>
 
@@ -57,11 +44,5 @@ const ExerciseLoader = (props) => {
 
 export default ExerciseLoader
 
-{/*{contentState.content.showEx ?
-        <PGddlController
-        myitems={contentState.content.exercises}/>
-        : null}*/}
-        {/* <Route path="/ex1" component={ PGddlController } />
-        <Route path="/ex1" render={(props) => < PGddlController {...props} />}
-        {/*<Route path="/TextInput" component={ TextInputDataLoader } />
-        <Route path="/RadioButtons" component={ DropDownDataLoader } />*/}
+{/*<NavLink to="/ex2" exact >{el}</NavLink> 
+<Route path="/ex2" children={ <MultichoiceController myitems={props.optobject} />} />*/}

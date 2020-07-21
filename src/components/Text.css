@@ -2,6 +2,10 @@
     color:#fff;
     
 }
+.justifiedDiv{
+    text-align: justify;
+    text-justify: inter-word;
+}
 .newSelect{
     width:100%;
     text-align:center;
@@ -21,10 +25,10 @@ span.ignore{
   }
 p.ignore{
     border:2px solid black;
-    text-align:center;
+    text-align:justify;
     height:50px;
     width:95%;
-    padding:10px;
+    
    
 }
 .boldit{
@@ -32,7 +36,7 @@ p.ignore{
 }
 .ignoreChunk{
     background-color:gray!important;
-    padding:5px;
+    
 }
 .hideText{
     visibility:hidden;

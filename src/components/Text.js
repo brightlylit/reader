@@ -6,7 +6,7 @@ const Text = React.forwardRef( ( props, ref ) => {
 
     }
     return(
-        <div>
+        <div className="justifiedDiv">
             {props.textArray.map((el, i) => {
                 if(el.includes('<h3>')){
                    el = el.slice(4, el.length)
@@ -22,8 +22,8 @@ const Text = React.forwardRef( ( props, ref ) => {
                 if(el.includes('<se>')){
                     el = el.slice(4, el.length)
                     return(
-                        
-                        
+                       <React.Fragment>
+                       <span> {el} </span>
                         <p key={i} 
                         className='ignore'
                         ref = {props.refArray[i]}
@@ -40,7 +40,7 @@ const Text = React.forwardRef( ( props, ref ) => {
                         
                         </select>
                         </p>
-                        
+                        </React.Fragment> 
                       
                          
                     )                   

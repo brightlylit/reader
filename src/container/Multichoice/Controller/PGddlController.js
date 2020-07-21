@@ -9,7 +9,15 @@ class PGddlController extends Component{
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.content = this.props.myitems;
-        this.arrayOfRefs = this.content[0].answers.map(() => React.createRef())
+        try{
+            this.arrayOfRefs = this.content[0].answers.map(() => React.createRef())
+        }
+        catch(err){
+            //alert(err.message)
+            window.location.href = "/"
+        }
+        
+       
             for( const el of this.content[0].answers ){
                 //Shuffle(el)
                 console.log("el here: ",el)

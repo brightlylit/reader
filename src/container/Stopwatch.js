@@ -31,7 +31,7 @@ class Stopwatch extends Component{
             this.setState({textContent:this.textContent})
             timer();
             if( this.props.autostop === "true" ){
-                console.log("stopping timer")
+                alert("Congratulations, you found them in: "+this.textContent)
                 clearTimeout(this.t)
             }
 

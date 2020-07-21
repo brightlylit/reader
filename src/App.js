@@ -120,16 +120,11 @@ class App extends Component {
         this.setState({text:this.textArray, refArray:refarray, 
                       ignore:this.content[y].ignore, key:this.content[y].key, 
                       headings:this.content[y].headings,
-                      exercises: exerciseHeadings}, this.showstate)                     
+                      exercises: exerciseHeadings})                     
       }      
     } 
     
-}
-  showstate = () => {
-        return(console.log("this.state.text: ",this.state.text),
-        console.log("this.state.exercises[1]: ",this.state.exercises[1].type)
-        )
-  }  
+} 
   render(){
     
     return (
@@ -175,6 +170,7 @@ class App extends Component {
           </Col>
           <Col size={1.0}>
             <div>
+              <h3>Welcome to the reader.</h3>
               <Text
               textArray={ this.state.text }
               className={ "unblanked" }
@@ -183,7 +179,9 @@ class App extends Component {
               headings={ this.state.headings }
               />
               <hr/>
+              <p>Choose a text from the list above.</p>
             </div>
+          
           </Col>
           <NewCol size={0.5}>
             <Row>
