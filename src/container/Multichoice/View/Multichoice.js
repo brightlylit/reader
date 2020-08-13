@@ -11,7 +11,7 @@ class Multichoice extends Component{
             <div>
 
                 
-                { this.props.myitems[1].sentences.map((el, key) => {
+                { this.props.myitems[0].sentences.map((el, key) => {
                     
                     return(
                         <Row key={ key } className="rowclass">
@@ -21,7 +21,7 @@ class Multichoice extends Component{
                                     {this.props.value[key].map((el, i) => {
                                         return(
                                            
-                                                <li>
+                                                <li key={ i }>
                                                     <input type="radio" 
                                                         key={ i }
                                                         name={ key }

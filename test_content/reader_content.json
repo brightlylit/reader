@@ -13,8 +13,10 @@
 			"headings":["this is heading 1", "this is heading 2"],
 			"exercises":[
 				{"type":"pgDDLpara","sentences":[["Are you * teacher?"], ["Is * Atacama desert in Chile?"], ["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"], ["Is * dog intelligent?"]],"answers":[["a","the","-"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]},
-				{"type":"multichoice","sentences":[["multichoice Are you * teacher"],["Is * Atacama desert in Chile?"],["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"],["Is * dog intelligent?"]],"answers": [["1","2","3"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]}]
-			},
+				{"type":"multichoice","sentences":[["multichoice Are you * teacher"],["Is * Atacama desert in Chile?"],["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"],["Is * dog intelligent?"]],"answers": [["1","2","3"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]},
+				{"type":"pgTI","sentences":[["pgTI Are you * teacher"],["Is * Atacama desert in Chile?"],["Is Manhattan in * NY?"], ["Is * Ind Oc in India?"],["Is * dog intelligent?"]],"answers": [["1","2","3"],["the","-","a"],["-","the","a"],["the","an","-"],["a","the","-"]]}
+			]
+		},
 		"T2":{
 			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra volutpat lobortis. In hac habitasse platea dictumst. Proin in nunc quis orci fermentum euismod quis sed ante. Integer vel ex ac neque iaculis sagittis quis vel elit. Aliquam blandit, tellus at dignissim laoreet, ante est mollis neque, non lobortis nisi turpis in augue. Aliquam cursus augue eget varius finibus. Aliquam tristique vel ante sit amet sollicitudin. Integer sit amet risus vitae magna imperdiet molestie.",
 			"key": [1, 13, 21, 35, 49],

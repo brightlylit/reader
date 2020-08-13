@@ -1,41 +1,40 @@
 import React, { Component} from 'react';
-//import  DataLoader  from '../../../Exports/DataLoader/DataLoader';
 import _ from 'lodash';
 import Multichoice from '../View/Multichoice'
 import Layout from '../../../UI/Layout';
+import Shuffle from '../../../Exports/Shuffle/Shuffle';
 
 
 class MultichoiceController extends Component{
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this)  
+        this.handleChange = this.handleChange.bind(this) 
         try{
-            this.arrayOfRefs = this.props.myitems[1].answers.map(() => React.createRef())
-            this.answers = this.props.myitems[1].answers
-        }
+            for(let x=0; x < this.props.myitems.length; x++){
+                if(this.props.myitems[x].type === "multichoice"){
+                    console.log("Exercise type is: ",this.props.myitems[x].type)
+                    this.arrayOfRefs = this.props.myitems[x].answers.map(() => React.createRef())
+                    this.answerKey = this.props.myitems[x].answers
+                    this.answers = _.cloneDeep(this.props.myitems[x].answers)
+                   console.log("this.answerKey.length: ",this.answerKey.length)
+                   console.log("this.answers.length: ",this.answers.length)
+                       for( const el of this.answers ){
+                           Shuffle(el)
+                         }
+                         
+                }
+            }
+          
+        } 
         catch(err){
             window.location.href = "/"
         }       
         
     }
-    state = {
-        exerciseContent:{sentences:[],answers:[]},
-        myrefs: [],
-        answerKey: []
-    }
-    
-    componentDidMount(){ 
-       // let content = this.props.myitems
-        //this.setState({ exerciseContent:content })
-            //const arrayOfRefs = this.state.exerciseContent.answers.map(() => React.createRef())                     
-            //this.setState({ myrefs:arrayOfRefs })
-            //this.setState( { answerKey: content.answerKey } )
 
-    }
-    
     handleChange(event) {
-        if(event.target.value === this.answers[parseInt(event.target.name)][0]){
-          this.arrayOfRefs[event.target.name].current.innerHTML = "correct!!"
+        if(event.target.value === this.answerKey[parseInt(event.target.name)][0]){
+            this.arrayOfRefs[event.target.name].current.innerHTML = "CORRECT"  
         }else{
             this.arrayOfRefs[event.target.name].current.innerHTML = "WRONG"  
         }
@@ -50,7 +49,7 @@ class MultichoiceController extends Component{
                         onChange={this.handleChange}
                         value={this.answers}
                         refarray={this.arrayOfRefs}
-                    />
+                     />
 
                 </Layout>
                

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import _ from 'lodash';
 import Text from './components/Text'
+import Shuffle from './Exports/Shuffle/Shuffle'
 import { Grid, Row, Col, NewCol, InnerCol } from './components/ExampleStyledComponent'
 import DataLoader from './Exports/DataLoader/DataLoader'
 import DropDown from './components/DropDown/DropDown'
@@ -21,6 +22,7 @@ class App extends Component {
     this.myp = new DataLoader();
     this.content = {}  
     this.ignoreCounter = 0;
+    this.answerKey = []
   }
   state = {
     text:[],
@@ -37,6 +39,13 @@ class App extends Component {
       let TOK = Object.keys(content)
       this.setState({textOptKeys:TOK, headings:content.headings})
       this.content = content 
+      
+       /*this.answerKey = _.cloneDeep(this.exerciseContent.answers)
+        this.exerciseContent.answerKey = this.answerKey
+            for( const el of this.exerciseContent.answers ){
+                Shuffle(el)
+              }*/
+              
     })  
   }
   onClickHandler = (e) => { 
@@ -70,8 +79,6 @@ class App extends Component {
         this.state.refArray[this.midPoint++].current.style = "color:white"
         this.state.refArray[this.midPointDown--].current.style = "color:white"
         }
-        break;
-      case "reload": window.location.reload();
         break;
       case "showWordsInContext": 
           for(let z=0; z < this.state.refArray.length; z++){
@@ -108,20 +115,36 @@ class App extends Component {
       }
     }
   }
-  onChangeHandler = (e) => {
+  onChangeHandler = (e) => { 
     let keyArray = Object.keys(this.content)
     for (var x = 0; x < keyArray.length; x++){
       let y = keyArray[x]//T1 etc
       if(e.target.value === y){
         this.textArray = this.content[y].text.split(" ")
         let exerciseHeadings = this.content[y].exercises
-        //let exerciseHeadingKeys = Object.keys(exerciseHeadings)
+        //console.log("this.content[y].exercises: "+this.content[y].exercises[0].answers)
         let refarray = this.textArray.map(()=> React.createRef())
         this.setState({text:this.textArray, refArray:refarray, 
                       ignore:this.content[y].ignore, key:this.content[y].key, 
                       headings:this.content[y].headings,
-                      exercises: exerciseHeadings})                     
-      }      
+                      exercises: exerciseHeadings})
+         // for(let z=0; z < this.content[y].exercises.length; z++){
+          //  this.answerKey = _.cloneDeep(this.content[y].exercises[z].answers)
+            //console.log("original answers: "+this.answerKey)
+
+          //  Shuffle(this.content[y].exercises[z].answers[z])
+            //console.log("shuffled answers: "+this.content[y].exercises[z].answers)
+
+          //}
+          //for( const el of this.content[y].exercises[0].answers ){
+              //Shuffle(el)
+              ////console.log("el: ", el)
+              ////console.log("shuffled answers: "+this.content[y].exercises[0].answers)
+          //}
+          
+          
+      }
+           
     } 
     
 } 
@@ -151,10 +174,8 @@ class App extends Component {
           name="pause"
           onClick={this.onClickPauseHandler}
           >pause</button>&nbsp;
-          <button 
-          name="reload"
-          onClick={this.onClickHandler}
-          >reload</button>
+          <a href="/">reload</a> 
+          
           <button
           name="showWordsInContext"
           onClick={this.onClickHandler}

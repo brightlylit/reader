@@ -10,22 +10,34 @@ class PGddlController extends Component{
         this.handleChange = this.handleChange.bind(this);
         this.content = this.props.myitems;
         try{
-            this.arrayOfRefs = this.content[0].answers.map(() => React.createRef())
-        }
+            for(let x=0; x < this.props.myitems.length; x++){
+                if(this.props.myitems[x].type === "pgDDLpara"){
+                    console.log("Exercise type is: ",this.props.myitems[x].type)
+                    this.arrayOfRefs = this.props.myitems[x].answers.map(() => React.createRef())
+                    this.answerKey = this.props.myitems[x].answers
+                    this.answers = _.cloneDeep(this.props.myitems[x].answers)
+                   //console.log("this.answerKey.length: ",this.answerKey.length)
+                   ///console.log("this.answers.length: ",this.answers.length)
+                       for( const el of this.answers ){
+                           Shuffle(el)
+                           console.log("[pgDDLController] shuffled: ",el)
+                         }
+                         
+                }
+            }
+
+            
+            
+     console.log("pgDDLController: ",this.props.myitems)
+          
+        } 
         catch(err){
-            //alert(err.message)
             window.location.href = "/"
-        }
-        
-       
-            for( const el of this.content[0].answers ){
-                //Shuffle(el)
-                console.log("el here: ",el)
-              }
+        } 
     }
     handleChange(event) {
-        if(event.target.value === this.content[0].answers[parseInt(event.target.name)][0]){
-            this.arrayOfRefs[event.target.name].current.innerHTML = "correct!!"
+        if(event.target.value === this.answerKey[parseInt(event.target.name)][0]){
+            this.arrayOfRefs[event.target.name].current.innerHTML = "CORRECT"  
         }else{
             this.arrayOfRefs[event.target.name].current.innerHTML = "WRONG"  
         }
@@ -37,6 +49,7 @@ class PGddlController extends Component{
                     <PGddl
                         myitems={this.props.myitems}
                         onChange={this.handleChange}
+                        value={this.answers}
                         refarray = {this.arrayOfRefs}
                     />   
                 

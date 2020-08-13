@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import MultichoiceController from '../../container/Multichoice/Controller/MultichoiceController';
 import PGddlController from '../../container/Multichoice/Controller/PGddlController'
+import TextInputController from '../../container/TextInput/Controller/TextInputController'
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 const ExerciseLoader = (props) => {
     let optarray = []
-   // let loadTemplate = ""
-   // let objVals = {}
     for(let element in props.optobject){
         optarray.push(element)
-        //console.log("element ",element)
-    }
-   //console.log("props.optobject: ",props.optobject)
-   //console.log("props.optobject.length: ",props.optobject.length)
-    
-    const [contentState, setContentState] = useState({
-        state:{exercises: props.optobject}         
-    })
-   
-  
+    }   
+    //const [contentState, setContentState] = useState({
+       // state:{exercises: props.optobject}         
+   // }) 
     return( 
         <BrowserRouter>  
             <nav>
@@ -33,8 +26,10 @@ const ExerciseLoader = (props) => {
                 </ul>  
             </nav>
             <Switch>
+                {console.log("[ExerciseLoader] props.optobject: ",props.optobject)}
                 <Route path="/ex0" children={ <MultichoiceController myitems={props.optobject} />} />
                 <Route path="/ex1" children={ <PGddlController myitems={props.optobject} />} />
+                <Route path="/ex2" children={ <TextInputController myitems={props.optobject} />} />
                 
             </Switch>  
         </BrowserRouter>
@@ -44,5 +39,3 @@ const ExerciseLoader = (props) => {
 
 export default ExerciseLoader
 
-{/*<NavLink to="/ex2" exact >{el}</NavLink> 
-<Route path="/ex2" children={ <MultichoiceController myitems={props.optobject} />} />*/}

@@ -36,7 +36,8 @@ class PGddl extends Component{
                                 <select className="custom-select" name={ key } onChange={this.props.onChange}>
                                     <option>----select----</option>
                                     {console.log("[pgDDL] typeof this.props.myitems[0].answers: ", this.props.myitems[0].answers[0])}
-                                    {this.props.myitems[0].answers[0].map((el, i) => {
+                                   {/* {this.props.myitems[0].answers[0].map((el, i) => {*/}
+                                    {this.props.value[0].map((el, i) => {
                                             return(
                                                 <option key={i}>{el}</option>
                                                 ) 
