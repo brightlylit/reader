@@ -1,56 +1,59 @@
 import React, { Component} from 'react';
+import  DataLoader  from '../../../Exports/DataLoader/DataLoader';
 import _ from 'lodash';
 import Multichoice from '../View/Multichoice'
 import Layout from '../../../UI/Layout';
-import Shuffle from '../../../Exports/Shuffle/Shuffle';
 
 
 class MultichoiceController extends Component{
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this) 
-        try{
-            for(let x=0; x < this.props.myitems.length; x++){
-                if(this.props.myitems[x].type === "multichoice"){
-                    console.log("Exercise type is: ",this.props.myitems[x].type)
-                    this.arrayOfRefs = this.props.myitems[x].answers.map(() => React.createRef())
-                    this.answerKey = this.props.myitems[x].answers
-                    this.answers = _.cloneDeep(this.props.myitems[x].answers)
-                   console.log("this.answerKey.length: ",this.answerKey.length)
-                   console.log("this.answers.length: ",this.answers.length)
-                       for( const el of this.answers ){
-                           Shuffle(el)
-                         }
-                         
-                }
-            }
-          
-        } 
-        catch(err){
-            window.location.href = "/"
-        }       
+        //this.handleChange = this.handleChange.bind(this)
+        //this.myp = new DataLoader()
+        {console.log("[MultichoiceController] this.props.myitems: ",this.props.myitems)}
         
     }
+    state = {
+        exerciseContent:{sentences:[],answers:[]},
+        myrefs: [],
+        answerKey: []
+    }
+    
+    componentDidMount(){ 
+        //this.myp.getData("Multichoice").then(( content ) => {
+            //this.setState({ exerciseContent:this.myitems })
+            //const arrayOfRefs = this.props.myitems.answers.map(() => React.createRef())                     
+            //this.setState({ myrefs:arrayOfRefs })
+            //this.setState( { answerKey: content.answerKey } )
+            
+            //console.log("[MultichoiceController] this.state.myrefs: ",this.state.myrefs)
 
+       // })
+
+    }
+    /*
     handleChange(event) {
-        if(event.target.value === this.answerKey[parseInt(event.target.name)][0]){
-            this.arrayOfRefs[event.target.name].current.innerHTML = "CORRECT"  
+       console.log("this.state.myrefs: ",this.state.myrefs)
+        if(event.target.value === this.state.answerKey[parseInt(event.target.name)][0]){
+          this.state.myrefs[event.target.name].current.innerHTML = "correct!!"
         }else{
-            this.arrayOfRefs[event.target.name].current.innerHTML = "WRONG"  
+            this.state.myrefs[event.target.name].current.innerHTML = "WRONG"  
         }
     }
-   
+   */
     
     render(){ 
+        
             return (
+                
                 <Layout>
-                     <Multichoice
+                    
+                     {/*<Multichoice
                         myitems={this.props.myitems}
                         onChange={this.handleChange}
-                        value={this.answers}
-                        refarray={this.arrayOfRefs}
-                     />
-
+                        value={this.state.exerciseContent.answers}
+                        refarray={this.state.myrefs}
+                     />*/}
                 </Layout>
                
                 

@@ -1,5 +1,5 @@
 import TextInput from '../View/TextInput';
-import _ from 'lodash';
+
 import React, { Component } from 'react';
 import Layout from '../../../UI/Layout';
 import Shuffle from '../../../Exports/Shuffle/Shuffle';
@@ -14,13 +14,13 @@ import Shuffle from '../../../Exports/Shuffle/Shuffle';
              //this.answers = []
              this.inputOnChangeHandler = this.inputOnChangeHandler.bind(this)
              this.onClickhandler = this.onClickhandler.bind(this);
-             try{
-                this.arrayOfRefs = this.props.myitems[2].answers.map(() => React.createRef())
-                this.answers = this.props.myitems[2].answers
-                console.log("[TextInputController]this.arrayOfRefs: ",this.arrayOfRefs)
+            try{
+               // this.arrayOfRefs = this.props.myitems.answers.map(() => React.createRef())
+               // this.answers = this.props.myitems.answers
+               // console.log("[TextInputController]this.arrayOfRefs: ",this.arrayOfRefs)
             }
             catch(err){
-                window.location.href = "/"
+               // window.location.href = "/"
             }  
         }
         state = {
@@ -100,13 +100,14 @@ import Shuffle from '../../../Exports/Shuffle/Shuffle';
         render(){
             return(
                 <Layout>
-                    <TextInput
+                    
+                   {/* <TextInput
                         refarray={this.arrayOfRefs}
                         myitems={this.props.myitems}
                         onKeyDown={ this.inputOnChangeHandler }
                         visible={ this.state.buttonsAreVisible }
                         onClick={ this.onClickhandler }
-                    />
+                   />*/}
                 </Layout>
 
             )

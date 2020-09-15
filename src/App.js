@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import _ from 'lodash';
 import Text from './components/Text'
-import Shuffle from './Exports/Shuffle/Shuffle'
 import { Grid, Row, Col, NewCol, InnerCol } from './components/ExampleStyledComponent'
 import DataLoader from './Exports/DataLoader/DataLoader'
 import DropDown from './components/DropDown/DropDown'
@@ -22,7 +21,8 @@ class App extends Component {
     this.myp = new DataLoader();
     this.content = {}  
     this.ignoreCounter = 0;
-    this.answerKey = []
+    this.answerKey = [];
+
   }
   state = {
     text:[],
@@ -32,20 +32,16 @@ class App extends Component {
     textOptKeys:[],
     autostop:"false",
     headings:[],
-    exercises:[]
+    exercises:[],
+    showExerciseLoader:"false"
   }
   componentDidMount(){
-    this.myp.getData().then((content) => {
+    this.myp.getData().then((content) => {//content === eg T1 -> exercises -> 0 -> answers / sentences / type
       let TOK = Object.keys(content)
       this.setState({textOptKeys:TOK, headings:content.headings})
-      this.content = content 
-      
-       /*this.answerKey = _.cloneDeep(this.exerciseContent.answers)
-        this.exerciseContent.answerKey = this.answerKey
-            for( const el of this.exerciseContent.answers ){
-                Shuffle(el)
-              }*/
-              
+      this.content = content //root node is T1 / T2 etc
+
+        
     })  
   }
   onClickHandler = (e) => { 
@@ -70,14 +66,14 @@ class App extends Component {
         break;
       case "animate": const m = this.state.refArray.length
         let mrandomSpan = Math.floor(Math.random() * m)
-        this.state.refArray[mrandomSpan].current.style = "font-weight:bold;color:red"
-        setTimeout(() => {this.state.refArray[mrandomSpan].current.style = "color:white"},1000)
+       // this.state.refArray[mrandomSpan].current.style = "font-weight:bold;color:red"
+       // setTimeout(() => {this.state.refArray[mrandomSpan].current.style = "color:white"},1000)
         break;
-      case "sequential": this.state.refArray[this.curr++].current.style = "color:white"
+      case "sequential": //this.state.refArray[this.curr++].current.style = "color:white"
         break;
       case "middle":if(this.midPointDown >= 0){
-        this.state.refArray[this.midPoint++].current.style = "color:white"
-        this.state.refArray[this.midPointDown--].current.style = "color:white"
+       // this.state.refArray[this.midPoint++].current.style = "color:white"
+       // this.state.refArray[this.midPointDown--].current.style = "color:white"
         }
         break;
       case "showWordsInContext": 
@@ -116,37 +112,22 @@ class App extends Component {
     }
   }
   onChangeHandler = (e) => { 
-    let keyArray = Object.keys(this.content)
+    let keyArray = Object.keys(this.content) // eg T1/T2 etc
     for (var x = 0; x < keyArray.length; x++){
-      let y = keyArray[x]//T1 etc
-      if(e.target.value === y){
-        this.textArray = this.content[y].text.split(" ")
-        let exerciseHeadings = this.content[y].exercises
-        //console.log("this.content[y].exercises: "+this.content[y].exercises[0].answers)
+      let y = keyArray[x] //T1 etc
+      if(e.target.value === y){ //check selected text name (T1 etc) exists
+        this.textArray = this.content[y].text.split(" ")//split the content of the text node into an array
+        let exerciseHeadings = this.content[y].exercises //nodes labelled 0,1,2 etc
         let refarray = this.textArray.map(()=> React.createRef())
         this.setState({text:this.textArray, refArray:refarray, 
                       ignore:this.content[y].ignore, key:this.content[y].key, 
                       headings:this.content[y].headings,
-                      exercises: exerciseHeadings})
-         // for(let z=0; z < this.content[y].exercises.length; z++){
-          //  this.answerKey = _.cloneDeep(this.content[y].exercises[z].answers)
-            //console.log("original answers: "+this.answerKey)
-
-          //  Shuffle(this.content[y].exercises[z].answers[z])
-            //console.log("shuffled answers: "+this.content[y].exercises[z].answers)
-
-          //}
-          //for( const el of this.content[y].exercises[0].answers ){
-              //Shuffle(el)
-              ////console.log("el: ", el)
-              ////console.log("shuffled answers: "+this.content[y].exercises[0].answers)
-          //}
-          
-          
-      }
-           
-    } 
-    
+                      exercises: exerciseHeadings,
+                      showExerciseLoader:"true"
+                    })                    
+            }
+    }
+ 
 } 
   render(){
     
@@ -206,12 +187,13 @@ class App extends Component {
           </Col>
           <NewCol size={0.5}>
             <Row>
-              <InnerCol size={0.95}>
-                <span>Exercise Loader</span>
-                <ExerciseLoader
-                optobject={this.state.exercises}
-                />
-              </InnerCol>            
+                {this.state.showExerciseLoader === "true" ? 
+                  <InnerCol size={0.95}>
+                    <ExerciseLoader
+                    optobject={this.state.exercises}// eg 0 -> answers / sentences / type
+                    />
+                  </InnerCol> 
+                : null}        
             </Row>
           </NewCol>
         </Row>
@@ -222,23 +204,15 @@ class App extends Component {
           <Col size={0.125}>
           </Col>
           <Col>
-          <Key
-          textarray={ this.textArray}
-          answers={ this.state.key }
-          />
+            <Key
+            textarray={ this.textArray}
+            answers={ this.state.key }
+            />
           </Col>
         </Row>
-      </Grid>
-      
-      
-     
+      </Grid> 
     );
-
   }
- 
-   
-  
-  
 }
 
 export default App;

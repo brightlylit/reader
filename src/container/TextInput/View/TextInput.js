@@ -4,13 +4,12 @@ import './TextInput.css';
         render(){
             return(
                 <div>
-                    {this.props.myitems[2].sentences.map((el, i) => {
+                    {this.props.myitems.sentences.map((el, i) => {
                         el = el.toString().split("*")
                         return (
                             <div key={i}>
                                 <span>{el[0]}</span>
                                     <input type="text" className="text-input"
-                                        
                                         onKeyDown = { this.props.onKeyDown }//this handles backspace key press
                                         count = { this.props.counter }
                                         myitems = { this.props.myitems }

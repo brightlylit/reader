@@ -11,7 +11,8 @@ class DataLoader extends Component{
   getData(){
     const myf = database.ref('/userDB/').once('value').then((snap) => {
       if(snap.val()){   
-        this.exerciseContent = snap.val()
+        this.exerciseContent = snap.val()//eg T1 -> exercises -> 0 -> answers / sentences / type
+        console.log("DataLoader] this.exerciseContent: ", this.exerciseContent)
         return this.exerciseContent
       }
     })

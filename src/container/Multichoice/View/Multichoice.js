@@ -7,36 +7,33 @@ class Multichoice extends Component{
         super()
     }
     render(){
+        console.log("this.props.myitems: ",this.props.myitems)
+        console.log("typeof this.props.myitems: ",typeof this.props.myitems)
         return (
             <div>
-
-                
-                { this.props.myitems[0].sentences.map((el, key) => {
+                { this.props.myitems.sentences.map((el, key) => {
                     
                     return(
                         <Row key={ key } className="rowclass">
                             <Col>
                                 <span>{ el }</span>
-                                    <ul>
                                     {this.props.value[key].map((el, i) => {
                                         return(
-                                           
-                                                <li key={ i }>
-                                                    <input type="radio" 
-                                                        key={ i }
-                                                        name={ key }
-                                                        value={ el }
-                                                        onChange={ this.props.onChange }
-                                                    />
-                                                    <label 
-                                                        htmlFor={ el }
-                                                    >
-                                                        { el }
-                                                    </label>
-                                                </li>                                                                                          
+                                            <div key={ i }>
+                                                <input type="radio" 
+                                                    key={ i }
+                                                    name={ key }
+                                                    value={ el }
+                                                    onChange={ this.props.onChange }
+                                               />
+                                                <label 
+                                                    htmlFor={ el }
+                                                >
+                                                    { el }
+                                                </label>
+                                            </div>                                                                                      
                                         ) 
-                                    })}  
-                                    </ul>                               
+                                    })}                                 
                             </Col>
                             <Col 
                                 size={1} 
@@ -45,7 +42,7 @@ class Multichoice extends Component{
                             />
                                                   
                             
-                                </Row>
+                        </Row>
                     )
                 })}
             </div>
