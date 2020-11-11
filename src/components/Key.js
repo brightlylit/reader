@@ -2,6 +2,7 @@ import React from 'react';
 
 const Key = (props) => {
     let words = ['Find the words: ']
+    console.log("[Key] props.answers: "+props.answers.length)
     for(let x = 0; x < props.answers.length; x++){
         let word = props.textarray[props.answers[x]]
         if(word.includes('<')){
@@ -12,8 +13,8 @@ const Key = (props) => {
     }
         return(
             <React.Fragment>
-
-                            {words}    
+                {words} 
+                   
             </React.Fragment> 
         )
 }

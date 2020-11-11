@@ -7,11 +7,14 @@ class Multichoice extends Component{
         super()
     }
     render(){
-        console.log("this.props.myitems: ",this.props.myitems)
-        console.log("typeof this.props.myitems: ",typeof this.props.myitems)
+        //console.log("[Multichoice]this.props.myitems.sentences: ",this.props.myitems.sentences)
+        //console.log("typeof this.props.myitems.sentences: ",typeof this.props.myitems.sentences)
         return (
             <div>
-                { this.props.myitems.sentences.map((el, key) => {
+            {console.log("typeof [Multichoice]this.props.myitems: ", typeof this.props.myitems[0].sentences)}
+
+              {/*  
+                { this.props.myitems.sentences[0].map((el, key) => {
                     
                     return(
                         <Row key={ key } className="rowclass">
@@ -44,7 +47,7 @@ class Multichoice extends Component{
                             
                         </Row>
                     )
-                })}
+                })}*/}
             </div>
         )
     }

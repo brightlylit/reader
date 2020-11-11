@@ -1,8 +1,7 @@
-import TextInput from '../View/TextInput';
-
+//import TextInput from '../View/TextInput';
 import React, { Component } from 'react';
 import Layout from '../../../UI/Layout';
-import Shuffle from '../../../Exports/Shuffle/Shuffle';
+//import Shuffle from '../../../Exports/Shuffle/Shuffle';
 
     class TextInputController extends Component{
         constructor(props){
@@ -34,7 +33,7 @@ import Shuffle from '../../../Exports/Shuffle/Shuffle';
             */
         onClickhandler( event ){
            alert(event.target.value)
-           let x = event.which || event.keyCode; 
+           //let x = event.which || event.keyCode; 
             //console.log("key code: ", x)
            // this.currentInput = event.target.name
             console.log("this.arrayOfRefs: ",this.arrayOfRefs)
@@ -100,7 +99,7 @@ import Shuffle from '../../../Exports/Shuffle/Shuffle';
         render(){
             return(
                 <Layout>
-                    
+                    <span>Text Input</span>
                    {/* <TextInput
                         refarray={this.arrayOfRefs}
                         myitems={this.props.myitems}

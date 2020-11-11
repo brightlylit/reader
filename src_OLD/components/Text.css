@@ -1,0 +1,57 @@
+.blanked{
+    color:#fff;
+    
+}
+.justifiedDiv{
+    text-align: justify;
+    text-justify: inter-word;
+}
+.newSelect{
+    width:100%;
+    text-align:center;
+}
+.stopWatchSpan{
+    font-size:2em;
+    margin:10px;
+    background-color:yellow;
+    border:2px solid black;
+    padding:10px;
+}
+span.ignore{
+    background-color:green!important;
+    padding-left:2px;
+    padding-right:2px;
+    color:white!important;
+  }
+p.ignore{
+    border:2px solid black;
+    text-align:justify;
+    height:50px;
+    width:95%;
+    
+   
+}
+.boldit{
+    font-weight: bold;
+}
+.ignoreChunk{
+    background-color:gray!important;
+    
+}
+.hideText{
+    visibility:hidden;
+}
+.greyed{
+    background-color:white;
+    color:lightgray!important
+
+}
+.unblanked{
+    color:#000;
+}
+.spanStyle{
+    border: 2px solid black!important;
+    padding:10px;
+    font: size 0.8em;
+    color:gray;
+}

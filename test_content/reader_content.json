@@ -1,24 +1,34 @@
 {
 	"userDB": {
-		"T1": {
-			"text": "<bo>Elon <bo>Reeve <bo>Musk, born June 28, 1971, is an engineer, industrial designer, technology entrepreneur and philanthropist. He is a citizen of South Africa, Canada, and the United States. He is based in the United States, where he immigrated to at age 20 and has resided since then. He is the founder, CEO and chief engineer/designer of SpaceX; early investor, CEO and product architect of Tesla, Inc; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI. He was elected a Fellow of the Royal Society in 2018. In December 2016, he was ranked 21st on the Forbes list of The World's Most Powerful People, and was ranked joint-first on the Forbes list of the Most Innovative Leaders of 2019. A self-made billionaire, as of June 2020 his net worth was estimated at $42.6 billion and he is listed by Forbes as the 31st-richest person in the world. He is the longest tenured CEO of any automotive manufacturer <br>globally. Born to a Canadian mother and South African father, Musk was born and raised in Pretoria, South Africa. He briefly attended the University of Pretoria before moving to Canada when he was 17 to attend Queen's University. He transferred to the University of Pennsylvania two years later, where he received a bachelor's degree in economics from the Wharton School and a bachelor&#39;s degree in physics from the College of Arts and Sciences. He moved to California in 1995 to begin a Ph.D. in applied physics and material sciences at Stanford University, but decided to pursue a business career instead of enrolling. He co-founded (with his brother Kimbal) Zip2, a web software company, which was acquired by Compaq for $340 million in 1999. Musk then founded X.com, an online bank. It merged with Confinity in 2000, which had launched PayPal the previous year and was subsequently bought by eBay for $1.5 billion in October <br>2002. In May 2002, Musk founded SpaceX, an aerospace manufacturer and space transport services company, of which he is CEO and lead designer. He joined Tesla Motors, Inc. (now Tesla, Inc.), an electric vehicle manufacturer, in 2004, the year after it was founded, became its product architect, and became its CEO in October 2008. In 2006, he helped create SolarCity, a solar energy services company (now a subsidiary of Tesla). In 2015, Musk co-founded OpenAI, a non-profit research company that aims to promote friendly artificial intelligence. In July 2016, he co-founded Neuralink, a neurotechnology company focused on developing brain–computer interfaces. In December 2016, Musk founded The Boring Company, an infrastructure and tunnel construction company focused on tunnels optimized for electric <br>vehicles. In addition to his primary business pursuits, Musk has envisioned a high-speed transportation system known as the Hyperloop. Musk has said the goals of SpaceX, Tesla, and SolarCity revolve around his vision to &quot;change the world and help humanity&quot;. His goals include reducing global warming through sustainable energy production and consumption and lessening the risk of human extinction by establishing a human colony on Mars.",
+		"Elon Musk": {"text":"<bo>Elon <bo>Reeve <bo>Musk, born June 28, 1971, is an engineer, industrial designer, technology entrepreneur and philanthropist. He is a citizen of South Africa, Canada, and the United States. He is based in the United States, where he immigrated to at age 20 and has resided since then. He is the founder, CEO and chief engineer and designer of SpaceX; early investor, CEO and product architect of Tesla, Inc; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI. He was elected a Fellow of the Royal Society in 2018. In December 2016, he was ranked 21st on the Forbes list of The World's Most Powerful People, and was ranked joint-first on the Forbes list of the Most Innovative Leaders of 2019. A self-made billionaire, as of June 2020 his net worth was estimated at $42.6 billion and he is listed by Forbes as the 31st-richest person in the world. He is the longest tenured CEO of any automotive manufacturer <br>globally. Born to a Canadian mother and South African father, Musk was born and raised in Pretoria, South Africa. He briefly attended the University of Pretoria before moving to Canada when he was 17 to attend Queen's University. He transferred to the University of Pennsylvania two years later, where he received a bachelor's degree in economics from the Wharton School and a bachelor&#39;s degree in physics from the College of Arts and Sciences. He moved to California in 1995 to begin a Ph.D. in applied physics and material sciences at Stanford University, but decided to pursue a business career instead of enrolling. He co-founded (with his brother Kimbal) Zip2, a web software company, which was acquired by Compaq for $340 million in 1999. Musk then founded X.com, an online bank. It merged with Confinity in 2000, which had launched PayPal the previous year and was subsequently bought by eBay for $1.5 billion in October <br>2002. In May 2002, Musk founded SpaceX, an aerospace manufacturer and space transport services company, of which he is CEO and lead designer. He joined Tesla Motors, Inc. (now Tesla, Inc.), an electric vehicle manufacturer, in 2004, the year after it was founded, became its product architect, and became its CEO in October 2008. In 2006, he helped create SolarCity, a solar energy services company (now a subsidiary of Tesla). In 2015, Musk co-founded OpenAI, a non-profit research company that aims to promote friendly artificial intelligence. In July 2016, he co-founded Neuralink, a neurotechnology company focused on developing brain–computer interfaces. In December 2016, Musk founded The Boring Company, an infrastructure and tunnel construction company focused on tunnels optimized for electric <br>vehicles. In addition to his primary business pursuits, Musk has envisioned a high-speed transportation system known as the Hyperloop. Musk has said the goals of SpaceX, Tesla, and SolarCity revolve around his vision to 'change the world and help humanity'. His goals include reducing global warming through sustainable energy production and consumption and lessening the risk of human extinction by establishing a human colony on Mars.",
 			"key": [1, 13, 21, 35, 49],
 			"ignore": [
-				[2, 3, 4, 5, 6],
+					[2, 3, 4, 5, 6],
+					[10, 11, 12, 14, 15],
+					[20, 22, 23, 24, 25],
+					[30, 31, 32, 33, 34],
+					[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[
+{"type":"multichoice", "sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]}, {"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]}
+]
+		},
+		"Michelle Obama":{
+			"text": "Michelle LaVaughn Robinson Obama (née Robinson; born January 17, 1964) is an American lawyer and author who was the first lady of the United States from 2009 to 2017. She is married to the 44th President of the United States Barack Obama. She is the first African-American First Lady of the United States. Raised on the South Side of Chicago, Illinois, Obama is a graduate of Princeton University and Harvard Law School. Following law school, Obama became an associate at the Chicago office of the law firm Sidley & Austin, where she met her future husband Barack. At the firm, she worked on marketing and intellectual property law. She continues to hold her law licence, but as she no longer needs it for her work, she has kept it on a voluntary inactive status since 1993. In 1991, she held public sector positions in the Chicago city government as an Assistant to the Mayor, and as Assistant Commissioner of Planning and Development. In 1993, she became Executive Director for the Chicago office of Public Allies, a non-profit organization encouraging young people to work on social issues in non-profit groups and government agencies. She worked there nearly four years and set fundraising records for the organization that still stood 12 years after she left. Obama later said that she had never been happier in her life prior to working 'to build Public Allies'. In 1996, Obama served as the Associate Dean of Student Services at the University of Chicago, where she developed the University's Community Service Centre. In 2002, she began working for the University of Chicago Hospitals, first as executive director for community affairs and, beginning May 2005, as Vice President for Community and External Affairs. She continued to hold the University of Chicago Hospitals position during her husband's political campaign of 2008, but cut back to part-time in order to spend time with her daughters as well as work for her husband's election. She subsequently took a leave of absence from her job. Obama served as a salaried board member of TreeHouse Foods, Inc., a major Wal-Mart supplier, from shortly after her husband was seated in the Senate until she cut ties shortly after her husband announced his candidacy for the presidency; he criticised Wal-Mart labour policies at an AFL-CIO forum in Trenton, New Jersey, on May 14, 2007. She also served on the board of directors of the Chicago Council on Global Affairs. Obama campaigned for her husband's presidential bid throughout 2007 and 2008, delivering a keynote address at the 2008 Democratic National Convention. She returned to speak for him at the 2012 Democratic National Convention. During the 2016 Democratic National Convention in Philadelphia, she delivered a speech in support of the Democratic presidential nominee, Hillary Clinton, a former first lady. As first lady, Obama served as a role model for women and worked as an advocate for poverty awareness, education, nutrition, physical activity, and healthy eating. She supported American designers and was considered a fashion icon.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
 				[10, 11, 12, 14, 15],
 				[20, 22, 23, 24, 25],
 				[30, 31, 32, 33, 34],
 				[50, 51, 52, 53, 54, 55]
 			],
-			"headings":["this is heading 1", "this is heading 2"],
-			"exercises":[
-				{"type":"multichoice","sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]},
-				{"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]},
-				{"type":"pgTI","sentences":[["Elon Musk is a citizen of * *, *, and the United States"],["He was born and raised in *, a city in * *"],["When he moved to California he intended to begin a *, but actually decided to begin his * * instead."], ["Tesla Motors Inc is an * * manufacturer."],["The goal of OpenAI is to promote * artificial intelligence."],["Elon Musk&#39;s vision is to change * * and help *."],["Elon Musk's vision is to change * * and help *."],["One of Elon Musk's goals is to reduce * * through * * production."],["He also wants to reduce the risk of human * by establishing a human colony on *."]],"answers": [["South","Africa","Canada"],["Pretoria","South","Africa"],["PhD","business","career"],["electric","vehicle"],["friendly"],["the","world","humanity"],["global","warming","sustainable","energy"],["extinction","Mars"]]}
-			]
+			"headings":[],
+			"exercises":[]
 		},
-		"T2":{
-			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra volutpat lobortis. In hac habitasse platea dictumst. Proin in nunc quis orci fermentum euismod quis sed ante. Integer vel ex ac neque iaculis sagittis quis vel elit. Aliquam blandit, tellus at dignissim laoreet, ante est mollis neque, non lobortis nisi turpis in augue. Aliquam cursus augue eget varius finibus. Aliquam tristique vel ante sit amet sollicitudin. Integer sit amet risus vitae magna imperdiet molestie.",
+		"Skara Brae":{
+			"text": "Skara Brae. Off the Northern tip of Scotland, where the Atlantic Ocean meets the North Sea, lies a group of 70 or so islands called the Orkneys. These largely treeless isles are frequently battered by Atlantic storms, gales and rain. It was during one such storm in the winter of 1850, when the combination of wind and high tides stripped away the grass from the top of a small hill called Skerrabra on the west side of the largest island known simply as ‘The Mainland’. This revealed a number of stone dwellings. The local landowner started excavations on the site, and within twenty years the remains of four ancient houses were unearthed. However, work was later abandoned until 1925 when another storm damaged some of the excavated buildings. A sea wall was proposed to protect the site, and, during construction, yet more buildings were discovered. It was first believed that the village was an Iron Age settlement, dating from around 1500 years ago. However, radiocarbon dating proved that it was in fact much older. It was a Neolithic village and dated back to 3000 B.C. The village had been inhabited for a period of about 600 years. The Neolithic village of Skara Brae now consists of eight dwellings, connected by low, covered passages. The stone buildings are extremely well-preserved, thanks to the layer of sand that protected the settlement. The interior fittings, furniture and household objects also survive to this day. The houses were partly built into a mound of waste material known as ‘midden’, which would have provided both stability and a thick layer of thick insulation against the harsh climate. From the outside, the village would have looked like a low, round mound, from which the rooves emerge. Nothing remains of these, so it is assumed that driftwood or whalebone beams supported a roof made of turf, skins, seaweed or straw. The dwellings were all connected by a series of passageways covered by stone slabs. This allowed the villagers to travel from one house to another without stepping outside – not a bad idea, considering the harsh climate. There was only one main passageway leading outside the village, which could be sealed from the inside. Evidence suggests that there were never more than eight dwellings, suggesting a total population of no more than 100 people. The houses are all very similar in design, consisting of a large square room with a central fireplace. The furnishings were all made of stone, given the shortage of wood on the islands. Two stone-edged compartments on either side of the fireplace appear to be beds. Every house also had a distinctive shelved, stone dresser. Its position, opposite the doorway and illuminated by the fire, indicating that this piece of furniture was not just a useful storage space, but had special significance. There was a sunken floor tank in each dwelling, possibly to supply shell fish. The village also had a remarkably sophisticated drainage system. One of the buildings, now known as ‘house seven’, is intriguingly different from the others. This building is detached from the others, and has a door which door could only be secured from the outside, suggesting that the house may have served as a type of jail – an unusual necessity in a village of less than a hundred people. ‘House eight’ is also unique, having none of the furnishings of the other houses. Excavators have found that the floor of the building is littered with fragments from the manufacture of tools, suggesting that the room was a workshop. The standardised house design has led some to believe that there was no hierarchy of rank within the settlement at Skara Brae, and that all villagers were equal. Whether or not this is true is debatable. However, it is likely that life here was probably quite comfortable for the Neolithic people. The villagers kept sheep and cattle, and grew wheat and barley. They probably traded these commodities for pottery. They would have hunted red deer and boar for their meat and skins. They would also have consumed fish, seal and whale meat, and the eggs of sea birds. The skin and bones of these animals would have provided tools such as needles and knives. Flint for cutting tools would have been traded or gathered from the shore.  Fuel probably came from seaweed, making the inside of the dwellings smoky and probably smelly. Driftwood was probably too valuable to burn. Why Skara Brae was deserted is still unknown. For some time it was thought that the people met with disaster. This theory came about when beads from a necklace were found abandoned on the floor.  It was thought that the woman who dropped them was in too much of a panic to pick them up. However, it is more likely that environmental and social factors forced people to leave. Firstly, the encroachment of sand and salt water would have made farming increasingly difficult. Second, there may have been changes in Neolithic society. Construction of large henge monuments in other parts of the island suggests that an elite ruling body, with the power to control other people, was emerging. Tight-knit communities like the one at Skara Brae were being replaced by larger, organised civilizations. ",
 			"key": [1, 13, 21, 35, 49],
 			"ignore": [
 				[0, 2, 3, 4, 5],
@@ -28,14 +38,10 @@
 				[50, 51, 52, 53, 54, 55]
 			],
 			"headings":["this is heading 1", "this is heading 2"],
-			"exercises":[
-				{"type":"multichoice","sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]},
-				{"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]},
-				{"type":"pgTI","sentences":[["Elon Musk is a citizen of * *, *, and the United States"],["He was born and raised in *, a city in * *"],["When he moved to California he intended to begin a *, but actually decided to begin his * * instead."], ["Tesla Motors Inc is an * * manufacturer."],["The goal of OpenAI is to promote * artificial intelligence."],["Elon Musk&#39;s vision is to change * * and help *."],["Elon Musk's vision is to change * * and help *."],["One of Elon Musk's goals is to reduce * * through * * production."],["He also wants to reduce the risk of human * by establishing a human colony on *."]],"answers": [["South","Africa","Canada"],["Pretoria","South","Africa"],["PhD","business","career"],["electric","vehicle"],["friendly"],["the","world","humanity"],["global","warming","sustainable","energy"],["extinction","Mars"]]}
-			]
+			"exercises":[]
 		},
-		"T3":{
-			"text": "Proin eget nisl egestas, euismod mauris sit amet, pellentesque sapien. Duis commodo, lorem eu vestibulum ultrices, nisl justo lobortis velit, in egestas purus erat eu magna. Curabitur semper dolor vitae ex placerat tempor in suscipit turpis. Donec hendrerit diam vel ex dignissim, non aliquet purus euismod. Pellentesque sit amet ex ut tellus tempus pharetra eu accumsan orci. Sed mattis sapien leo, sed pellentesque ipsum suscipit eget. Etiam pretium arcu in felis accumsan facilisis vel sed libero. Integer in nisl id urna vestibulum rutrum in sed lorem. In hac habitasse platea dictumst. Pellentesque id felis pellentesque turpis tempus iaculis a eu tortor. Phasellus accumsan, sapien nec faucibus ultrices, libero elit aliquet lorem, ac pulvinar purus lectus eget magna. Suspendisse vulputate, eros ac posuere bibendum, dolor elit porta risus, vitae venenatis odio dui vitae ex.",
+		"Triune Brain":{
+			"text": "Understanding the triune brain can help us appreciate the different natures of brain damage and psychological disorders. The most devastating form of brain damage, for example, is a condition in which someone is understood to be brain dead. In this state a person appears merely unconscious – sleeping, perhaps – but this is illusory. Here, the reptilian brain is functioning on autopilot despite the permanent loss of other cortexes. Disturbances to the limbic cortex are registered in a different manner. Pups with limbic damage can move around and feed themselves well enough but do not register the presence of their littermates. Scientists have observed how, after a limbic lobotomy2, “one impaired monkey stepped on his outraged peers as if treading on a log or a rock”. In our own species, limbic damage is closely related to sociopathic behaviour. Sociopaths in possession of fully-functioning neocortexes are often shrewd and emotionally intelligent people but lack any ability to relate to, empathise with or express concern for others. One of the neurological wonders of history occurred when a railway worker named Phineas Gage survived an incident during which a metal rod skewered his skull, taking a considerable amount of his neocortex with it. Though Gage continued to live and work as before, his fellow employees observed a shift in the equilibrium of his personality. Gage’s animal propensities were now sharply pronounced while his intellectual abilities suffered; garrulous or obscene jokes replaced his once quick wit. New findings suggest, however, that Gage managed to soften these abrupt changes over time and rediscover an appropriate social manner. This would indicate that reparative therapy has the potential to help patients with advanced brain trauma to gain an improved quality of life.",
 			"key": [1, 13, 21, 35, 49],
 			"ignore": [
 				[0, 2, 3, 4, 5],
@@ -45,12 +51,150 @@
 				[50, 51, 52, 53, 54, 55]
 			],
 			"headings":["this is heading 1", "this is heading 2"],
-			"exercises":[
-				{"type":"multichoice","sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]},
-				{"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]},
-				{"type":"pgTI","sentences":[["Elon Musk is a citizen of * *, *, and the United States"],["He was born and raised in *, a city in * *"],["When he moved to California he intended to begin a *, but actually decided to begin his * * instead."], ["Tesla Motors Inc is an * * manufacturer."],["The goal of OpenAI is to promote * artificial intelligence."],["Elon Musk&#39;s vision is to change * * and help *."],["Elon Musk's vision is to change * * and help *."],["One of Elon Musk's goals is to reduce * * through * * production."],["He also wants to reduce the risk of human * by establishing a human colony on *."]],"answers": [["South","Africa","Canada"],["Pretoria","South","Africa"],["PhD","business","career"],["electric","vehicle"],["friendly"],["the","world","humanity"],["global","warming","sustainable","energy"],["extinction","Mars"]]}
-			]
-
+			"exercises":[]
+		},
+		"The Secret Life of Pets 2":{
+			"text": "'The Secret Life Of Pets 2' is an animated film about pets that can talk, and the main characters are two brown dogs. These two dogs are called Max and Duke, and their owner has just had a baby called Liam. One of two dogs, Max, does not want to live with children at first, but Liam is very cute and Max soon loves life with the baby Liam. But then Max learns that the baby needs to go to the kindergarten and so Max is very afraid about his safety because he knows the outside world is very dangerous. He starts to panic until he meets a brave dog, whose name is Chicken. Duke tells Chicken about Max's worry, so Chicken decides to start training Max. In the end, Max is fine when the baby goes to kindergarten. There are many funny scenes in this film. It will make you laugh and is relaxing, but it also talks about serious issues in a fun way. The animation is good and there are many exciting scenes. It is a great choice to watch.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Avengers: End Game":{
+			"text": "In the movie 'End Game' the Avengers, a group of superheroes, come together to defeat the evil Thanos once and for all after losing to him in the previous film 'Infinity War'. After half of the universe is eliminated by Thanos, the Avengers try to bring them back to life but for that they need the help of Ant-Man. He gives them the clue to travel back in time and collect the different infinity stones to restore the universe. In my opinion the movie gives us a final tribute to the entire saga and at the same time such incredible moments like when Capitan America raises the hammer of Thor and when Hulk and Iron Man carry Thanos' gauntlet.They also created the greatest crossover movie in the entire history of film by making the audience feel a real connection with the characters. The only thing I didn’t like in the movie is that they left out some main characters until the very end of the film and focused on others that were less interesting. But apart from that it was the best movie I have ever seen in my life. I really enjoyed it and I hope they continue to make more movies like this.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Avengers: Infinity War":{
+			"text": "'Avengers: Infinity War' is the best action and superhero film that I have seen in recent years. Released in 2018, it stars Robert Downey Jr, Chris Hemsworth, Mark Ruffalo, Chris Evans and other actors as the superheroes, or Avengers, and Josh James Brolin as villain Thanos. The plot involves a titan Thanos who wants to collect all of the ancient infinity stones in order to commit genocide, but the Avengers want to prevent this and save not just Earth, but the entire universe. The 'Infinity Gauntlet' can control power of the infinity stones and if Thanos collects all stones, he can destroy the world at the click of a finger. Can the Avengers stop him before he clicks his fingers? There is good atmosphere in the film and the action is non-stop so the film has a fast pace. The soundtrack is impressive and improves each scene. The acting is of the highest level, particularly the performance of Robert Downey Jr. as Iron Man. There are a lot of excellent special effects too which make the film feel epic. I would recommend this film to everyone, but especially if you are keen on action or superhero films and a fan of Marvel studios.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Shazam!":{
+			"text": "'Shazam!' is a modern superhero film with a typical action movie plot. It could be one of the best movies of the year if there was not such strong competition. The character Billy Batson desperately searches for his mother, who he lost at the age of eight at a fair. Even though people tell him that his mother left him, he keeps looking for her. Billy Batson then acquires super powers when a former sorcerer seeks someone pure of heart to save the world of the Seven Deadly Sins, which have been released. Can he cope with that responsibility? Watch the film to find out! Despite being different from the comic book version, and despite having an unoriginal plot, this film shows that you can still stand out and make a really popular and exciting film in other ways. The soundtrack manages to pull you into the film, adapting to the individual scenes and enhancing the action. The performance of each actor draws on the everyday lives of the superheroes, giving them a human feel that we can relate to. Finally, although we find scenes that are common to other superhero flicks, others manage to show us that this film is a little different from the norm in this genre. I would recommend 'Shazam!', especially to people who are fanatical about superhero films. But I also think this film will speak to you if you are not a huge fan of the genre. It is that good. You really will be amazed.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium A":{
+			"text":"In recent years we have all been exposed to dire media reports concerning the impending demise of global coal and oil reserves, but the depletion of another key non-renewable resource continues without receiving much press at all. Helium – an inert, odourless, monatomic element known to lay people as the substance that makes balloons float and voices squeak when inhaled – could be gone from this planet within a generation.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium B":{
+			"text":"Helium itself is not rare; there is actually a plentiful supply of it in the cosmos. In fact, 24 per cent of our galaxy’s elemental mass consists of helium, which makes it the second most abundant element in our universe. Because of its lightness, however, most helium vanished from our own planet many years ago. Consequently, only a miniscule proportion – 0.00052%, to be exact – remains in earth’s atmosphere. Helium is the by-product of millennia of radioactive decay from the elements thorium and uranium. The helium is mostly trapped in subterranean natural gas bunkers and commercially extracted through a method known as fractional distillation. ",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium C":{
+			"text":"The loss of helium on Earth would affect society greatly. Defying the perception of it as a novelty substance for parties and gimmicks, the element actually has many vital applications in society. Probably the most well known commercial usage is in airships and blimps (non-flammable helium replaced hydrogen as the lifting gas du jour after the Hindenburg catastrophe in 1932, during which an airship burst into flames and crashed to the ground killing some passengers and crew). But helium is also instrumental in deep-sea diving, where it is blended with nitrogen to mitigate the dangers of inhaling ordinary air under high pressure; as a cleaning agent for rocket engines; and, in its most prevalent use, as a coolant for superconducting magnets in hospital MRI (magnetic resonance imaging) scanners.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium D":{
+			"text":"The possibility of losing helium forever poses the threat of a real crisis because its unique qualities are extraordinarily difficult, if not impossible to duplicate (certainly, no biosynthetic ersatz product is close to approaching the point of feasibility for helium, even as similar developments continue apace for oil and coal). Helium is even cheerfully derided as a “loner” element since it does not adhere to other molecules like its cousin, hydrogen. According to Dr. Lee Sobotka, helium is the “most noble of gases, meaning it’s very stable and non-reactive for the most part … it has a closed electronic configuration, a very tightly bound atom. It is this coveting of its own electrons that prevents combination with other elements’. Another important attribute is helium’s unique boiling point, which is lower than that for any other element. The worsening global shortage could render millions of dollars of high-value, life-saving equipment totally useless. The dwindling supplies have already resulted in the postponement of research and development projects in physics laboratories and manufacturing plants around the world. There is an enormous supply and demand imbalance partly brought about by the expansion of high-tech manufacturing in Asia.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium E":{
+			"text":"The source of the problem is the Helium Privatisation Act (HPA), an American law passed in 1996 that requires the U.S. National Helium Reserve to liquidate its helium assets by 2015 regardless of the market price. Although intended to settle the original cost of the reserve by a U.S. Congress ignorant of its ramifications, the result of this fire sale is that global helium prices are so artificially deflated that few can be bothered recycling the substance or using it judiciously. Deflated values also mean that natural gas extractors see no reason to capture helium. Much is lost in the process of extraction. As Sobotka notes: '[t]he government had the good vision to store helium, and the question now is: Will the corporations have the vision to capture it when extracting natural gas, and consumers the wisdom to recycle? This takes long-term vision because present market forces are not sufficient to compel prudent practice'. For Nobel-prize laureate Robert Richardson, the U.S. government must be prevailed upon to repeal its privatisation policy as the country supplies over 80 per cent of global helium, mostly from the National Helium Reserve. For Richardson, a twenty- to fifty-fold increase in prices would provide incentives to recycle.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Helium F":{
+			"text":"A number of steps need to be taken in order to avert a costly predicament in the coming decades. Firstly, all existing supplies of helium ought to be conserved and released only by permit, with medical uses receiving precedence over other commercial or recreational demands. Secondly, conservation should be obligatory and enforced by a regulatory agency. At the moment some users, such as hospitals, tend to recycle diligently while others, such as NASA, squander massive amounts of helium. Lastly, research into alternatives to helium must begin in earnest.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
+		},
+		"Making time for science":{
+			"text":"Making time for science. Chronobiology might sound a little futuristic – like something from a science fiction novel, perhaps – but it’s actually a field of study that concerns one of the oldest processes life on this planet has ever known: short-term rhythms of time and their effect on flora and fauna. This can take many forms. Marine life, for example, is influenced by tidal patterns. Animals tend to be active or inactive depending on the position of the sun or moon. Numerous creatures, humans included, are largely diurnal – that is, they like to come out during the hours of sunlight. Nocturnal animals, such as bats and possums, prefer to forage by night. A third group are known as crepuscular: they thrive in the low-light of dawn and dusk and remain inactive at other hours. When it comes to humans, chronobiologists are interested in what is known as the circadian rhythm. This is the complete cycle our bodies are naturally geared to undergo within the passage of a twenty-four hour day. Aside from sleeping at night and waking during the day, each cycle involves many other factors such as changes in blood pressure and body temperature. Not everyone has an identical circadian rhythm. ‘Night people’, for example, often describe how they find it very hard to operate during the morning, but become alert and focused by evening. This is a benign variation within circadian rhythms known as a chronotype. Scientists have limited abilities to create durable modifications of chronobiological demands. Recent therapeutic developments for humans such as artificial light machines and melatonin administration can reset our circadian rhythms, for example, but our bodies can tell the difference and health suffers when we breach these natural rhythms for extended periods of time. Plants appear no more malleable in this respect; studies demonstrate that vegetables grown in season and ripened on the tree are far higher in essential nutrients than those grown in greenhouses and ripened by laser. Knowledge of chronobiological patterns can have many pragmatic implications for our day-to-day lives. While contemporary living can sometimes appear to subjugate biology – after all, who needs circadian rhythms when we have caffeine pills, energy drinks, shift work and cities that never sleep? – keeping in synch with our body clock is important.",
+			"key": [1, 13, 21, 35, 49],
+			"ignore": [
+				[0, 2, 3, 4, 5],
+				[10, 11, 12, 14, 15],
+				[20, 22, 23, 24, 25],
+				[30, 31, 32, 33, 34],
+				[50, 51, 52, 53, 54, 55]
+			],
+			"headings":["this is heading 1", "this is heading 2"],
+			"exercises":[]
 		}
 	}
 }
