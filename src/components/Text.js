@@ -7,7 +7,6 @@ const Text = React.forwardRef( ( props, ref ) => {
        
 
     }
-    console.log("refarray: ",props.refArray)
     return(
 
         <div className="justifiedDiv">

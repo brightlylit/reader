@@ -1,16 +1,22 @@
 import React, { Component} from 'react';
 //import  DataLoader  from '../../../Exports/DataLoader/DataLoader';
 import _ from 'lodash';
-import Multichoice from '../View/Multichoice'
+import Multichoice from '../View/Multichoice';
 import Layout from '../../../UI/Layout';
+import Shuffle from'../../../Exports/Shuffle';
 
 
 class MultichoiceController extends Component{
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this)
-        //this.myp = new DataLoader()
-        
+        this.answers = _.cloneDeep(this.props.exerciseContent[0].answers)
+        this.answersArray = []
+        for(let x=0; x < this.props.exerciseContent.length; x++){
+            this.answersArray.push(this.props.exerciseContent[x].answers)
+        }
+        this.arrayOfRefs = this.props.exerciseContent[0].answers.map(() => React.createRef())
+
         
     }
     state = {
@@ -18,36 +24,54 @@ class MultichoiceController extends Component{
         myrefs: [],
         answerKey: []
     }
-    
+    makeRefs = () => {
+            
+    }
     componentDidMount(){ 
-        console.log("mounted")
-        let content = this.props.myitems
-        console.log("[multichoicecontroller]this.props.myitems    : ", this.props.myitems)
-        this.setState({ exerciseContent:content })
-            const arrayOfRefs = this.state.exerciseContent.answers.map(() => React.createRef())                     
-            this.setState({ myrefs:arrayOfRefs })
-            this.setState( { answerKey: content.answerKey } )
-        console.log("this.state.exerciseContent: ",this.state.exerciseContent)
+        this.setState({exerciseContent:this.props.exerciseContent})
+        for( const el of this.answers ){
+            Shuffle(el)
+          }
+        console.log("this.answers: ",this.answers)
+        console.log("this.answersArray: ",this.answersArray)
+        console.log("this.props.exerciseContent[0].answers: ",this.props.exerciseContent[0].answers)
+        console.log("[Multichoice Controller]this.arrayOfRefs: ",this.arrayOfRefs)
+        /*for(let x=0; x < this.props.exerciseContent.length; x++){
+            this.answersArray.push(this.props.exerciseContent[x].answers)
+            for(let y=0; y < this.props.exerciseContent[x].answers.length; y++){
+                for(let z=0; z < this.props.exerciseContent[x].answers[y].length; z++)
+                this.answers.push(this.props.exerciseContent[x].answers[y][z])
+            }
+        }*/
+        
+       // this.arrayOfRefs = this.answers.map(()=> React.createRef())
+        //console.log("this.arrayOfRefs: ", this.arrayOfRefs)
+        //console.log("this.answers: ", this.answers)
+       // console.log("this.arrayOfRefs: ",this.arrayOfRefs)
 
     }
     
     handleChange(event) {
-        if(event.target.value === this.state.answerKey[parseInt(event.target.name)][0]){
-          this.state.myrefs[event.target.name].current.innerHTML = "correct!!"
+        console.log("----------------------------handlechange-----------------------")
+        console.log("event.target.value: ",event.target.value)
+        console.log("this.answers[parseInt(event.target.name)][0]: ",this.answers[parseInt(event.target.name)][0])
+        this.arrayOfRefs[event.target.name].current.innerHTML = "correct!!"
+       /* if(event.target.value === this.answers[parseInt(event.target.name)][0]){
+          this.arrayOfRefs[event.target.name].current.innerHTML = "correct!!"
         }else{
-            this.state.myrefs[event.target.name].current.innerHTML = "WRONG"  
-        }
+            this.arrayOfRefs[event.target.name].current.innerHTML = "WRONG"  
+        }*/
     }
    
     
     render(){ 
             return (
                 <Layout>
-                     <Multichoice
-                        myitems={this.props.myitems}
+                    <Multichoice
+                        exerciseContent={this.props.exerciseContent}
                         onChange={this.handleChange}
-                        value={this.state.exerciseContent.answers}
-                        refarray={this.state.myrefs}
+                        value={this.answers}
+                        refarray={this.arrayOfRefs}
                     />
 
                 </Layout>

@@ -23,25 +23,16 @@ class TextHider extends Component {
             ignore:this.props.ignore,
             text:this.props.text           
         })
-        console.log("[TextHider] this.textArray: ", this.props.textArray)
 
     }
     
       
       onWordClickHandler = (e) =>{  
-        
-        //console.log("this.state.refArray: ",this.props.refArray) 
-        //console.log("this.state.ignore: ",this.props.ignore) 
-        console.log("this.state.childKey: ",this.props.childKey) 
-        //console.log("this.state.text: ",this.props.text) 
-        //console.log("this.state.childKey: "+this.props.childKey) 
-        //console.log("this.state.refArray[e.target.id].current.innerHTML: ",this.state.refArray[e.target.id].current.innerHTML)
-        //console.log("e.target.id: "+e.target.id)
-        //console.log("this.props.refArray[e.target.id].current: ",this.props.refArray[e.target.id].current)
-        for(var x = 0; x < this.props.childKey.length; x++){   
-          
-          if(this.props.refArray[e.target.id].current.innerHTML === this.props.refArray[this.props.childKey[x]].current.innerHTML){
-            
+        if(this.props.enableWordClickHandler === undefined){
+          return false
+        }
+        for(var x = 0; x < this.props.childKey.length; x++){             
+          if(this.props.refArray[e.target.id].current.innerHTML === this.props.refArray[this.props.childKey[x]].current.innerHTML){      
             this.props.refArray[e.target.id].current.classList.add('ignore') 
             this.ignoreCounter++;
             if(this.ignoreCounter === 5){
@@ -49,7 +40,6 @@ class TextHider extends Component {
             }
           }
         }
-        
       }
     
     render(){

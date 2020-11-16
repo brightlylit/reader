@@ -12,10 +12,7 @@ class Stopwatch extends Component{
    }
    state = {
        textContent:""
-   }
-        
-        
-    
+   }  
     componentDidMount(){
         const add = () => {
             this.seconds++;
@@ -56,12 +53,7 @@ class Stopwatch extends Component{
                 autostop={ this.props.autostop }
                 >Stop
                 </button>
-            </React.Fragment>
-                
-           
-                
-                
-            
+            </React.Fragment>    
         )
     }
 }

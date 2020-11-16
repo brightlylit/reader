@@ -13,14 +13,21 @@ const modal = (props) => {
                     <Backdrop 
                         show={props.show}
                     />
+                    
+                        
+                    
+                    <button 
+                        type="submit"
+                        onClick={props.startStopwatch}
+                        >
+                            Go!
+                    </button>
                     <button 
                         type="submit"
                         onClick={props.modalClosed}
-                        >OK</button>
-                    <button 
-                        type="submit"
-                        onClick={props.modalClosed}
-                        >Cancel</button>
+                        >
+                            Not interested
+                    </button>
                 </div>
             </div>
             

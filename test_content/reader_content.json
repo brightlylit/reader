@@ -11,7 +11,10 @@
 			],
 			"headings":["this is heading 1", "this is heading 2"],
 			"exercises":[
-{"type":"multichoice", "sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]}, {"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]}
+{"type":"multichoice", "sentences":[["123:"]],"answers":[["321","123","222"]]},
+{"type":"multichoice", "sentences":[["456:"]],"answers":[["654","456","654"]]},
+{"type":"multichoice", "sentences":[["Read the article. Which word does not accurately describe Elon Musk's career:"]],"answers":[["narrow-focused","broad-focused","socially-conscious"]]}, 
+{"type":"multichoice","sentences":[["Elon Musk was ranked 21st on Forbes list of..."],["Elon Musk has a degree in..."],["He moved to California in..."], ["The Boring Company specialises in creating..."]],"answers": [["most powerful people","richest people","business entrepreneurs"],["physics","material sciences","business"],["1995","1999","2000"],["tunnels for electric vehicles","vehicles for space travel","Artificial Intelligence"]]}
 ]
 		},
 		"Michelle Obama":{

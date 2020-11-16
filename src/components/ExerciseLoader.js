@@ -6,7 +6,11 @@ import MultichoiceController from '../container/Multichoice/Controller/Multichoi
 class ExerciseLoader extends Component {
     render(){
         return(   
-            <MultichoiceController exerciseContent={this.props.optobject}/>    
+           
+            <div>
+                theexerciseLoader 
+                 <MultichoiceController exerciseContent={this.props.optobject}/>
+            </div> 
         
 
         )
