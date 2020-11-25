@@ -121,7 +121,7 @@ class App extends Component {
                   </InnerCol> 
                 : null}        
             </Row>
-          </NewCol>
+        </NewCol>
         </Row>
         <Row>
         <Col size={0.125}>

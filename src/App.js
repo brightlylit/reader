@@ -3,14 +3,11 @@ import './App.css';
 import { Grid, Row, Col, NewCol, InnerCol } from './components/ExampleStyledComponent';
 import DataLoader from './Exports/DataLoader';
 import ExerciseLoader from './components/ExerciseLoader';
-import Text from './components/Text'
 import TextHider from './Exports/TextHider/TextHider'
-import TextHiderButtons from './Exports/TextHider/TextHiderButtons'
 import Stopwatch from './container/Stopwatch';
 import Key from './components/Key'
 import DropDown from './components/DropDown';
 import Modal from './UI/Modal/Modal';
-import { AnalyticsEventBuilder } from 'firebase-functions/lib/providers/analytics';
 
 class App extends Component{
     constructor(props){
@@ -22,6 +19,7 @@ class App extends Component{
         textOptKeys:[],
         refArray:[],
         showStopWatch:false,
+        className:"unblanked",
         //headings:[]
         text:'',
         textArray:[],
@@ -45,10 +43,11 @@ class App extends Component{
         return this.state.viewModal
     }
     startStopwatch = () => {
-        this.setState({viewModal:false})
-        this.setState({showStopWatch:true})
+        //this.setState({viewModal:false})
+        this.setState({showStopWatch:true, className:"unblanked"})
     }
-    onChangeHandler = (e) => {         
+    onChangeHandler = (e) => {  
+        this.setState({className:"unblanked"})       
        let keyArray = Object.keys(this.content) // eg T1/T2 etc
         for (var x = 0; x < keyArray.length; x++){
           let y = keyArray[x] //T1 etc
@@ -57,8 +56,11 @@ class App extends Component{
             this.answerKey = this.content[y].key
             if(this.answerKey != undefined){
                 this.setState({viewModal:true})
+                this.setState({className:"unblankedblurry"})
+                
             }else{
                 this.setState({viewModal:undefined})//undefined removes click handler on text
+                this.setState({className:"unblanked"})
             }
            this.text = this.content[y].text
            let exerciseHeadings = this.content[y].exercises //nodes labelled 0,1,2 etc
@@ -67,16 +69,18 @@ class App extends Component{
                           text:this.text,
                           textArray:this.textArray,
                           refArray:this.refArray, 
-                          //ignore:this.content[y].ignore, 
-                          //childKey:this.content[y].key, 
+                          ignore:this.content[y].ignore, 
+                          childKey:this.content[y].key, 
                           //headings:this.content[y].headings,
                           exercises: exerciseHeadings
                           
                         }) 
                 if(!this.content[y].exercises){
-                  this.setState({showExerciseLoader:"false"}) 
+                    console.log("this.content[y].exercises: ",this.content[y].exercises)
+                    this.setState({showExerciseLoader:"false"}) 
                 }else{
-                  this.setState({showExerciseLoader:"true"}) 
+                    console.log("this.content[y].exercises: ",this.content[y].exercises)
+                    this.setState({showExerciseLoader:"true"}) 
                   
                 }
                               
@@ -96,11 +100,7 @@ class App extends Component{
                         {/*<TextHiderButtons/>*/}  
                     </Col>
                         <Col size={1.0}>
-                        <Modal
-                            show={this.state.viewModal}
-                            modalClosed={this.closeModal}
-                            startStopwatch={this.startStopwatch}
-                        />
+                        
                         <DropDown
                             opts={this.state.textOptKeys}
                             onChange={this.onChangeHandler}
@@ -111,19 +111,38 @@ class App extends Component{
                             text={this.state.text}
                             textArray={this.state.textArray}
                             refArray={this.state.refArray}
+                            className={ this.state.className }
                             childKey={this.answerKey}
                             enableWordClickHandler={this.state.viewModal}
+                            
                         />
+                        
                         
                     </Col>
                     <NewCol size={0.5}>
                         <Row>
+                            <InnerCol size={0.95}>
+                                <Modal
+                                    show={this.state.viewModal}
+                                    modalClosed={this.closeModal}
+                                    startStopwatch={this.startStopwatch}
+                                    text={this.state.text}
+                                    textArray={this.state.textArray}
+                                    refArray={this.state.refArray}
+                                    ignore={this.state.ignore}
+                                    childKey={this.state.childKey}
+                                />
+                                {this.state.showStopWatch ? <Stopwatch /> : null}
+                            </InnerCol> 
+                        </Row>
+                        <Row>
                         {this.state.showExerciseLoader === "true" ? 
                             <InnerCol size={0.95}>
+                                <span>Exercise loader</span>
                                 <ExerciseLoader
                                     optobject={this.state.exercises}// eg 0 -> answers / sentences / type
                                 />
-                                {this.state.showStopWatch ? <Stopwatch /> : null}
+                               
                             </InnerCol> 
                         : null} 
                         </Row>

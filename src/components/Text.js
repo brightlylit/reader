@@ -72,7 +72,6 @@ const Text = React.forwardRef( ( props, ref ) => {
                         key={ i } 
                         onClick={ props.onClick }
                         className={props.className}
-                        //className={"boldit"}
                         ref = {props.refArray[i]}>
                             { el + ' ' }
                         </span>
@@ -82,7 +81,7 @@ const Text = React.forwardRef( ( props, ref ) => {
                     <span id={ i } 
                     key={ i } 
                     onClick={ props.onClick }
-                    className={props.className}
+                    className={ props.className }
                     ref = {props.refArray[i]}>
                         { el + ' ' }
                     </span>
