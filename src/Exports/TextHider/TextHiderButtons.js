@@ -1,28 +1,15 @@
 import React, {Component} from 'react';
 
 class TextHiderButtons extends Component {
-    constructor(props){
-        super(props)
-    }
-   // state = { refArray:[],
-              //childKey}
     onClickHandler = (e) => { 
         e.persist()
-        console.log("[TextHiderButtons]this.props.ignore: ",this.props.ignore)
-        console.log("[TextHiderButtons]this.props.childKey: ",this.props.childKey)
         this.props.startWatch()
-        //const params = {numwords:this.props.setNumWords,interval:this.props.setInterval}
         this.set = setInterval(()=> {this.timer(e.target.name, this.props.setNumWords)},this.props.setInterval)    
-       // console.log("[TextHiderButtons] props: ",this.props ) 
-       console.log("number of words is: ", this.props.setNumWords)
-       console.log("interval is: ", this.props.setInterval)
         }
     onClickPauseHandler = () => {
         clearInterval(this.set)
         }
     timer = (a, numwords) => {
-        console.log("timer called")
-        console.log("numwords: ",numwords)
         switch(a){
           case "random": 
                 const l = this.props.refArray.length
@@ -30,9 +17,7 @@ class TextHiderButtons extends Component {
                     let randomSpan = Math.floor(Math.random() * l)
                     try{
                         if(!this.props.refArray[randomSpan].current.classList.contains('ignore')){
-                            //this.props.refArray[randomSpan].current.classList.add('hideText')
                             this.props.refArray[randomSpan].current.classList.add('unblankedblurry')
-                            //alert("hidetext")
                           }
                         }
                     catch(err){
@@ -49,12 +34,10 @@ class TextHiderButtons extends Component {
           case "sequential": this.props.refArray[this.curr++].current.style = "color:white"
             break;
           case "middle":if(this.midPointDown >= 0){
-           // this.props.refArray[this.midPoint++].current.style = "color:white"
-           // this.props.refArray[this.midPointDown--].current.style = "color:white"
             }
             break;
           case "showWordsInContext": 
-            
+              this.onClickPauseHandler()
               for(let z=0; z < this.props.refArray.length; z++){
                 this.props.refArray[z].current.classList.remove('hideText')
                 this.props.refArray[z].current.classList.remove('unblankedblurry')

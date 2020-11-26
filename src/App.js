@@ -3,7 +3,7 @@ import './App.css';
 import { Grid, Row, Col, NewCol, InnerCol } from './components/ExampleStyledComponent';
 import DataLoader from './Exports/DataLoader';
 import ExerciseLoader from './components/ExerciseLoader';
-import TextHider from './Exports/TextHider/TextHider'
+import Text from './components/Text';
 import Stopwatch from './container/Stopwatch';
 import Key from './components/Key'
 import DropDown from './components/DropDown';
@@ -20,7 +20,6 @@ class App extends Component{
         refArray:[],
         showStopWatch:false,
         className:"unblanked",
-        //headings:[]
         text:'',
         textArray:[],
         showExerciseLoader:"false"
@@ -46,9 +45,10 @@ class App extends Component{
         //this.setState({viewModal:false})
         this.setState({showStopWatch:true, className:"unblanked"})
     }
-    onChangeHandler = (e) => {  
-        this.setState({className:"unblanked"})       
-       let keyArray = Object.keys(this.content) // eg T1/T2 etc
+    
+    onChangeHandler = (e) => { 
+             
+        let keyArray = Object.keys(this.content) // eg T1/T2 etc
         for (var x = 0; x < keyArray.length; x++){
           let y = keyArray[x] //T1 etc
           if(e.target.value === y){ //check selected text name exists
@@ -62,22 +62,22 @@ class App extends Component{
                 this.setState({viewModal:undefined})//undefined removes click handler on text
                 this.setState({className:"unblanked"})
             }
-           this.text = this.content[y].text
-           let exerciseHeadings = this.content[y].exercises //nodes labelled 0,1,2 etc
             this.refArray = this.textArray.map(()=> React.createRef())
+            
+            
             this.setState({ 
-                          text:this.text,
+                          text:this.content[y].text,
                           textArray:this.textArray,
                           refArray:this.refArray, 
                           ignore:this.content[y].ignore, 
                           childKey:this.content[y].key, 
-                          //headings:this.content[y].headings,
-                          exercises: exerciseHeadings
+                          exercises: this.content[y].exercises
                           
-                        }) 
+                        }, this.callTheRefBack) 
                 if(!this.content[y].exercises){
                     console.log("this.content[y].exercises: ",this.content[y].exercises)
                     this.setState({showExerciseLoader:"false"}) 
+                    
                 }else{
                     console.log("this.content[y].exercises: ",this.content[y].exercises)
                     this.setState({showExerciseLoader:"true"}) 
@@ -88,6 +88,11 @@ class App extends Component{
         }
         return this.state
     } 
+    callTheRefBack = () => {
+        for(let r=0; r < this.state.refArray.length; r++){
+            this.state.refArray[r].current.classList.remove("greyed")
+        }
+    }
     render(){
         return (
             <Grid>
@@ -97,25 +102,24 @@ class App extends Component{
                 <Row>
                     <Col size={0.125}>
                         
-                        {/*<TextHiderButtons/>*/}  
                     </Col>
                         <Col size={1.0}>
                         
                         <DropDown
                             opts={this.state.textOptKeys}
                             onChange={this.onChangeHandler}
+                            onMouseDown={this.onClickHandler}
                         />
                         
                         <span>text hider</span>
-                        <TextHider
-                            text={this.state.text}
-                            textArray={this.state.textArray}
-                            refArray={this.state.refArray}
+                   
+                        <Text
+                            textArray={ this.state.textArray }
+                            refArray={ this.state.refArray }
                             className={ this.state.className }
-                            childKey={this.answerKey}
-                            enableWordClickHandler={this.state.viewModal}
-                            
-                        />
+                            onClick={ this.onWordClickHandler }
+                      
+                    />
                         
                         
                     </Col>
@@ -124,7 +128,6 @@ class App extends Component{
                             <InnerCol size={0.95}>
                                 <Modal
                                     show={this.state.viewModal}
-                                    modalClosed={this.closeModal}
                                     startStopwatch={this.startStopwatch}
                                     text={this.state.text}
                                     textArray={this.state.textArray}

@@ -17,9 +17,7 @@ class Modal extends Component {
     onInputTime = (e) => {
         this.setState({spanTimeVal:e.target.value})
     }
-    componentDidMount(){
-        
-    }
+   
     render(){
         return(
             this.props.show ?
@@ -54,19 +52,6 @@ class Modal extends Component {
                         </span>
                         <br/>
                         
-                        
-                       {/* <button 
-                            type="submit"
-                            onClick={this.props.startStopwatch}
-                            >
-                                Go!
-                        </button>
-                        <button 
-                            type="submit"
-                            onClick={this.props.modalClosed}
-                            >
-                                Not interested
-                        </button>*/}
                         <TextHiderButtons
                             text={this.props.text}
                             textArray={this.props.textArray}

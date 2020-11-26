@@ -1,10 +1,9 @@
 import React from 'react';
 import './Text.css';
-//import { Grid, Row, Col, NewCol, InnerCol } from './ExampleStyledComponent';
 
 const Text = React.forwardRef( ( props, ref ) => {
     function changeHandler(){
-       
+       console.log("[Text] changeHandler empty function body")
 
     }
     return(
@@ -34,7 +33,7 @@ const Text = React.forwardRef( ( props, ref ) => {
                         <select className="newSelect"
                         ref = {props.refArray[i]}
                         onChange={changeHandler}>
-                            <option>--select--</option>
+                            <option>--dasdsadadselect--</option>
                             {props.headings.map((el,i) =>{
                                     return(
                                         <option key={i}>{el}</option>
